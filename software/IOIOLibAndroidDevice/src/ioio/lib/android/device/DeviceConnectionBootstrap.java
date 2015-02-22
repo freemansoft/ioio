@@ -563,5 +563,11 @@ public class DeviceConnectionBootstrap extends BroadcastReceiver implements
 		public OutputStream getOutputStream() throws ConnectionLostException {
 			return outputStream_;
 		}
+
+		@Override
+		public String identifier() {
+			// have no idea how to determine the name of the USB thingy
+			return Context.USB_SERVICE;
+		}
 	}
 }

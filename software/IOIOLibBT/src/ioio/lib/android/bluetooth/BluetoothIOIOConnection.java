@@ -139,4 +139,9 @@ public class BluetoothIOIOConnection implements IOIOConnection {
 	public boolean canClose() {
 		return true;
 	}
+
+	@Override
+	public String identifier() {
+		return name_;
+	}
 }

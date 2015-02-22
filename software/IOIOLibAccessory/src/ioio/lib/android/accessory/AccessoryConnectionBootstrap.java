@@ -281,6 +281,12 @@ public class AccessoryConnectionBootstrap extends BroadcastReceiver implements
 				}
 			}
 		}
+
+		@Override
+		public String identifier() {
+			// Have no idea how to return the identifier of this particular manager
+			return usbManager_.getClass().getSimpleName();
+		}
 	}
 
 	@Override
