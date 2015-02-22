@@ -44,7 +44,7 @@ import android.os.Build;
 import android.util.Log;
 
 public class BluetoothIOIOConnection implements IOIOConnection {
-	private static final String TAG = "BluetoothIOIOConnection";
+	private static final String TAG = BluetoothIOIOConnection.class.getSimpleName();
 	private BluetoothSocket socket_ = null;
 	private boolean disconnect_ = false;
 	private final BluetoothDevice device_;

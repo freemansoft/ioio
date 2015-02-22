@@ -26,6 +26,8 @@ public class HelloIOIOConsole extends IOIOConsoleApp {
 				System.in));
 		boolean abort = false;
 		String line;
+		// this may display before actually established a connection because those happenin threads
+		System.out.println("Input: t=toggle, n=on, f=off, q=quit.");
 		while (!abort && (line = reader.readLine()) != null) {
 			if (line.equals("t")) {
 				ledOn_ = !ledOn_;

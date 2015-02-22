@@ -129,7 +129,7 @@ class IOIOProtocol {
 		0x01   // 8000
 	};
 
-	private static final String TAG = "IOIOProtocol";
+	private static final String TAG = IOIOProtocol.class.getSimpleName();
 
 	enum PwmScale {
 		SCALE_1X(1, 0), SCALE_8X(8, 3), SCALE_64X(64, 2), SCALE_256X(256, 1);

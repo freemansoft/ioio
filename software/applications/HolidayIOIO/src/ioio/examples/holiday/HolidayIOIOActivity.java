@@ -34,7 +34,7 @@ import android.widget.SeekBar.OnSeekBarChangeListener;
  * @author ytai
  */
 public class HolidayIOIOActivity extends IOIOActivity {
-	private static final String TAG = "HolidayIOIO";
+	private static final String TAG = HolidayIOIOActivity.class.getSimpleName();
 	private Camera camera_;
 	RGB[] frame_ = null;
 	private int height_;

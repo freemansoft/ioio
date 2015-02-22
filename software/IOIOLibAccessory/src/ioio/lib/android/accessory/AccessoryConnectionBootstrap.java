@@ -59,7 +59,7 @@ import android.util.Log;
 public class AccessoryConnectionBootstrap extends BroadcastReceiver implements
 		ContextWrapperDependent, IOIOConnectionBootstrap, IOIOConnectionFactory {
 	private static final String ACTION_USB_PERMISSION = "ioio.lib.accessory.action.USB_PERMISSION";
-	private static final String TAG = "AccessoryIOIOConnection";
+	private static final String TAG = AccessoryConnectionBootstrap.class.getSimpleName();
 
 	private enum State {
 		CLOSED, WAIT_PERMISSION, OPEN

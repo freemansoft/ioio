@@ -37,13 +37,14 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
 
+import ioio.lib.spi.Log;
 import purejavacomm.CommPort;
 import purejavacomm.CommPortIdentifier;
 import purejavacomm.NoSuchPortException;
 import purejavacomm.SerialPort;
 
 class SerialPortIOIOConnection implements IOIOConnection {
-	// private static final String TAG = "SerialPortIOIOConnection";
+	private static final String TAG = SerialPortIOIOConnection.class.getSimpleName();
 	private boolean abort_ = false;
 	private final String name_;
 	private SerialPort serialPort_;
@@ -74,6 +75,7 @@ class SerialPortIOIOConnection implements IOIOConnection {
 						// This is only required on Windows, but otherwise harmless.
 						serialPort_.setDTR(true);
 						Thread.sleep(100);
+						Log.d(TAG,"Opened connection to "+name_);
 						return;
 					}
 				}
@@ -87,6 +89,7 @@ class SerialPortIOIOConnection implements IOIOConnection {
 					serialPort_.close();
 				}
 			}
+			Log.d(TAG,"Failed to open connection to "+name_);
 		}
 		throw new ConnectionLostException();
 	}
@@ -116,6 +119,10 @@ class SerialPortIOIOConnection implements IOIOConnection {
 	@Override
 	public boolean canClose() {
 		return true;
+	}
+	
+	public 	String identifier(){
+		return name_;
 	}
 
 	// This is a hack:
@@ -197,5 +204,6 @@ class SerialPortIOIOConnection implements IOIOConnection {
 			}
 			return -1;
 		}
+		
 	}
 }

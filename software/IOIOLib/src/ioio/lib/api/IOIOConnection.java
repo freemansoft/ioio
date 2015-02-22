@@ -49,4 +49,6 @@ public interface IOIOConnection {
 	 * @return true This connection can be closed.
 	 */
 	boolean canClose();
+	
+	String identifier();
 }

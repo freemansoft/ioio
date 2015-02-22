@@ -41,7 +41,7 @@ import java.net.Socket;
 import java.net.SocketException;
 
 public class SocketIOIOConnection implements IOIOConnection {
-	private static final String TAG = "SocketIOIOConnection";
+	private static final String TAG = SocketIOIOConnection.class.getSimpleName();
 	private final int port_;
 	private ServerSocket server_ = null;
 	private Socket socket_ = null;
@@ -139,4 +139,10 @@ public class SocketIOIOConnection implements IOIOConnection {
 	public boolean canClose() {
 		return true;
 	}
+	
+	public 	String identifier(){
+		return ""+port_;
+	}
+
+
 }

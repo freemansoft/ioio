@@ -60,7 +60,7 @@ public class SerialPortIOIOConnectionBootstrap implements
 			ports = getAllOpenablePorts();
 		}
 		for (final String port : ports) {
-			Log.d(TAG, "Adding serial port " + port);
+			Log.d(TAG, "Adding connection factory for " + port);
 			result.add(new IOIOConnectionFactory() {
 				@Override
 				public String getType() {

@@ -10,7 +10,7 @@ import ioio.lib.util.IOIOConnectionManager.IOIOConnectionThreadProvider;
 import ioio.lib.util.IOIOConnectionManager.Thread;
 
 public abstract class IOIOBaseApplicationHelper implements IOIOConnectionThreadProvider {
-	private static final String TAG = "IOIOBaseApplicationHelper";
+	private static final String TAG = IOIOBaseApplicationHelper.class.getSimpleName();
 	protected final IOIOLooperProvider looperProvider_;
 
 	public IOIOBaseApplicationHelper(IOIOLooperProvider provider) {

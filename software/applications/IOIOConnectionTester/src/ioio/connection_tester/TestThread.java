@@ -16,7 +16,7 @@ import java.util.Queue;
 import java.util.concurrent.ConcurrentLinkedQueue;
 
 public class TestThread extends Thread {
-	private static final String TAG = "TestThread";
+	private static final String TAG = TestThread.class.getSimpleName();
 	private static final int PACKET_SIZE = 2048;
 	private static final int NUM_PACKETS = 100;
 

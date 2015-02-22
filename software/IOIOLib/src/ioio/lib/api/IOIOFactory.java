@@ -90,5 +90,5 @@ public class IOIOFactory {
 		return new IOIOImpl(connection);
 	}
 
-	private static final String TAG = "IOIOFactory";
+	private static final String TAG = IOIOFactory.class.getSimpleName();
 }

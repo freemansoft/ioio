@@ -67,7 +67,7 @@ import android.util.Log;
  */
 public class DeviceConnectionBootstrap extends BroadcastReceiver implements
 		ContextWrapperDependent, IOIOConnectionBootstrap {
-	private static final String TAG = "DeviceConnectionBootstrap";
+	private static final String TAG = DeviceConnectionBootstrap.class.getSimpleName();
 	private static final String ACTION_USB_PERMISSION = "ioio.lib.otg.action.USB_PERMISSION";
 
 	private static final int REQUEST_TYPE = 0x21;

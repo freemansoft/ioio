@@ -60,7 +60,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 public class AppImageLibraryActivity extends ListActivity {
-	private static final String TAG = "AppImageLibraryActivity";
+	private static final String TAG = AppImageLibraryActivity.class.getSimpleName();
 	private static final int ADD_FROM_FILE = 0;
 	private static final int ADD_FROM_QR = 1;
 	private static final int ABOUT_DIALOG = 0;

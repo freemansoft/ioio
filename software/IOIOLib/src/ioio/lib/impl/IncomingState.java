@@ -41,7 +41,7 @@ import java.util.Set;
 import java.util.concurrent.ConcurrentLinkedQueue;
 
 class IncomingState implements IncomingHandler {
-	private static final String TAG = "IncomingState";
+	private static final String TAG = IncomingState.class.getSimpleName();
 
 	enum ConnectionState {
 		INIT, ESTABLISHED, CONNECTED, DISCONNECTED, UNSUPPORTED_IID

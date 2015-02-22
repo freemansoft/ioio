@@ -83,7 +83,7 @@ public class IOIOImpl implements IOIO, DisconnectListener {
 		}
 	}
 
-	private static final String TAG = "IOIOImpl";
+	private static final String TAG = IOIOImpl.class.getSimpleName();
 	private boolean disconnect_ = false;
 
 	private static final byte[] REQUIRED_INTERFACE_ID = new byte[] { 'I', 'O',
@@ -110,10 +110,10 @@ public class IOIOImpl implements IOIO, DisconnectListener {
 			throw new ConnectionLostException();
 		}
 		addDisconnectListener(this);
-		Log.d(TAG, "Waiting for IOIO connection");
+		Log.d(TAG, "Waiting for IOIO connection "+connection_.identifier());
 		try {
 			try {
-				Log.v(TAG, "Waiting for underlying connection");
+				Log.v(TAG, "Waiting for underlying connection "+connection_.identifier());
 				connection_.waitForConnect();
 				synchronized (this) {
 					if (disconnect_) {
@@ -128,16 +128,17 @@ public class IOIOImpl implements IOIO, DisconnectListener {
 				incomingState_.handleConnectionLost();
 				throw e;
 			}
-			Log.v(TAG, "Waiting for handshake");
+			Log.v(TAG, "Waiting for handshake "+connection_.identifier());
 			incomingState_.waitConnectionEstablished();
 			initBoard();
-			Log.v(TAG, "Querying for required interface ID");
+			Log.v(TAG, "Querying for required interface ID "+connection_.identifier());
 			checkInterfaceVersion();
-			Log.v(TAG, "Required interface ID is supported");
+			Log.v(TAG, "Required interface ID is supported "+connection_.identifier());
 			state_ = State.CONNECTED;
-			Log.i(TAG, "IOIO connection established");
+			Log.i(TAG, "IOIO connection established "+connection_.identifier());
 		} catch (ConnectionLostException e) {
-			Log.d(TAG, "Connection lost / aborted");
+			// you can get this when appends when this connection completed the handshake
+			Log.d(TAG, "Connection lost / aborted "+connection_.identifier());
 			state_ = State.DEAD;
 			throw e;
 		} catch (IncompatibilityException e) {
@@ -149,7 +150,7 @@ public class IOIOImpl implements IOIO, DisconnectListener {
 
 	@Override
 	public synchronized void disconnect() {
-		Log.d(TAG, "Client requested disconnect.");
+		Log.d(TAG, "Client requested disconnect "+connection_.identifier());
 		if (disconnect_) {
 			return;
 		}

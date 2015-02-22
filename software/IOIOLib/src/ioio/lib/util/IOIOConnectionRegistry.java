@@ -98,7 +98,7 @@ public class IOIOConnectionRegistry {
 		}
 	}
 
-	private static final String TAG = "IOIOConnectionRegistry";
+	private static final String TAG = IOIOConnectionRegistry.class.getSimpleName();
 
 	private static Collection<IOIOConnectionBootstrap> bootstraps_;
 

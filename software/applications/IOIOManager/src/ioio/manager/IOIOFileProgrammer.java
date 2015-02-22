@@ -38,7 +38,7 @@ import java.util.Arrays;
 import android.util.Log;
 
 public class IOIOFileProgrammer {
-	private static final String TAG = "IOIOFileProgrammer";
+	private static final String TAG = IOIOFileProgrammer.class.getSimpleName();
 
 	interface ProgressListener {
 		public void blockDone();

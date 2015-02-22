@@ -102,7 +102,7 @@ public class ProgrammerActivity extends IOIOActivity {
 		}
 	}
 
-	private static final String TAG = "ProgrammerActivity";
+	private static final String TAG = ProgrammerActivity.class.getSimpleName();
 	private static final int REQUEST_IMAGE_SELECT = 0;
 	private static final String SELECTED_BUNDLE_NAME = "SELECTED_BUNDLE_NAME";
 	private static final String SELECTED_BOARD_NAME = "SELECTED_BOARD_NAME";

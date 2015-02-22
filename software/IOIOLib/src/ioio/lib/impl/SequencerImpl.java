@@ -45,7 +45,7 @@ import java.util.LinkedList;
 import java.util.List;
 
 public class SequencerImpl extends AbstractResource implements Sequencer, SequencerEventListener {
-	private static final String TAG = "SequencerImpl";
+	private static final String TAG = SequencerImpl.class.getSimpleName();
 
 	private enum RemoteState {
 		IDLE_OR_MANUAL, RUNNING, STALLED, CLOSED

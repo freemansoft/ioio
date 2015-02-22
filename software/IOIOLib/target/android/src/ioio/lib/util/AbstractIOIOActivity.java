@@ -82,7 +82,7 @@ import android.os.Bundle;
  * @deprecated Please use {@link ioio.lib.util.android.IOIOActivity} instead.
  */
 public abstract class AbstractIOIOActivity extends Activity {
-	private static final String TAG = "AbstractIOIOActivity";
+	private static final String TAG = AbstractIOIOActivity.class.getSimpleName();
 
 	static {
 		IOIOConnectionRegistry

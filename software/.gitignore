@@ -5,3 +5,4 @@ jar
 
 local.properties
 proguard-project.txt
+**/.settings/

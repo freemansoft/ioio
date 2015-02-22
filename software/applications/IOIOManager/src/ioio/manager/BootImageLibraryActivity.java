@@ -59,7 +59,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 public class BootImageLibraryActivity extends ExpandableListActivity {
-	private static final String TAG = "BootImageLibraryActivity";
+	private static final String TAG = BootImageLibraryActivity.class.getSimpleName();
 	public static final String ACTION_SELECT = "SELECT";
 	public static final String ACTION_EDIT = "EDIT";
 	public static final String EXTRA_BUNDLE_NAME = "BUNDLE_NAME";
