@@ -140,8 +140,9 @@ public class SocketIOIOConnection implements IOIOConnection {
 		return true;
 	}
 	
+	@Override
 	public 	String identifier(){
-		return ""+port_;
+		return TAG + "(" + port_ + ")";
 	}
 
 

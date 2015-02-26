@@ -50,5 +50,12 @@ public interface IOIOConnection {
 	 */
 	boolean canClose();
 	
+	/**
+	 * Identifier used added by logging messages to describe specific IOIO
+	 * device
+	 * 
+	 * @return String description, port hame, device name. Ex:COM5, 8080,
+	 *         /dev/device
+	 */
 	String identifier();
 }
