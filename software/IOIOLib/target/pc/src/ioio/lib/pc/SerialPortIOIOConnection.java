@@ -75,7 +75,7 @@ class SerialPortIOIOConnection implements IOIOConnection {
 						// This is only required on Windows, but otherwise harmless.
 						serialPort_.setDTR(true);
 						Thread.sleep(100);
-						Log.d(TAG, "Opened connection to " + name_);
+						Log.d(TAG, "Opened connection to " + this.identifier());
 						return;
 					}
 				}
@@ -89,7 +89,7 @@ class SerialPortIOIOConnection implements IOIOConnection {
 					serialPort_.close();
 				}
 			}
-			Log.d(TAG, "Failed to open connection to " + name_);
+			Log.d(TAG, "Failed to open connection to " + this.identifier());
 		}
 		throw new ConnectionLostException();
 	}
@@ -121,8 +121,9 @@ class SerialPortIOIOConnection implements IOIOConnection {
 		return true;
 	}
 	
-	public 	String identifier(){
-		return name_;
+	@Override
+	public String identifier() {
+		return TAG + "(" + name_ + ")";
 	}
 
 	// This is a hack:

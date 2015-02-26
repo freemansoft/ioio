@@ -138,8 +138,7 @@ public class IOIOImpl implements IOIO, DisconnectListener {
 			Log.v(TAG, "Required interface ID is supported "
 							+ connection_.identifier());
 			state_ = State.CONNECTED;
-			Log.i(TAG,
-					"IOIO connection established " + connection_.identifier());
+			Log.i(TAG, "IOIO connection established " + connection_.identifier());
 		} catch (ConnectionLostException e) {
 			// you can get this when appends when this connection completed the handshake
 			Log.d(TAG, "Connection lost / aborted " + connection_.identifier());
