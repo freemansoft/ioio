@@ -142,6 +142,6 @@ public class BluetoothIOIOConnection implements IOIOConnection {
 
 	@Override
 	public String identifier() {
-		return TAG + "("+ name_ +")";
+		return TAG + "(" + name_ + ")";
 	}
 }
