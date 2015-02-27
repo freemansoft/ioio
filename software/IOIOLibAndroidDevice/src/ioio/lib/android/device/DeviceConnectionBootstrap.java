@@ -566,8 +566,7 @@ public class DeviceConnectionBootstrap extends BroadcastReceiver implements
 
 		@Override
 		public String identifier() {
-			// have no idea how to determine the name of the USB thingy
-			return TAG + "(" + Context.USB_SERVICE + ")";
+			return TAG + "(" + device_.getDeviceName() + ")";
 		}
 	}
 }
